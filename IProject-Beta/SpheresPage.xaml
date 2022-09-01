@@ -1,0 +1,102 @@
+﻿<Page x:Class="IProject_Beta.SpheresPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:IProject_Beta"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="SpheresPage" Loaded="Page_Loaded" SizeChanged="Page_SizeChanged">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="6.5*"></ColumnDefinition>
+            <ColumnDefinition Width="4.5*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <ScrollViewer Grid.Column="1">
+            <StackPanel x:Name="spheresStack">
+                <Border x:Name="sphereBorder" Margin="50,20,50,20" BorderBrush="DarkSlateGray" BorderThickness="1.5" CornerRadius="5,5,5,5">
+                    <Canvas Margin="5,5,5,5" x:Name="sphereCanvas" HorizontalAlignment="Stretch" Height="{Binding ActualWidth, RelativeSource={RelativeSource Self}}" MouseLeftButtonUp="sphereCanvas_MouseLeftButtonUp" MouseEnter="sphereCanvas_MouseEnter" MouseLeave="sphereCanvas_MouseLeave">
+                    </Canvas>
+                </Border>
+                <Grid Margin="0,0,0,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="200"></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <Border Margin="0,0,2,0" x:Name="healthSphereBorder" BorderBrush="DarkSlateGray" Grid.Column="0" BorderThickness="1.5" CornerRadius="5,5,5,5">
+                        <Canvas Margin="0,3,0,3" x:Name="healthSphereCanvas" HorizontalAlignment="Stretch" MouseEnter="healthSphereCanvas_MouseEnter" MouseLeave="healthSphereCanvas_MouseLeave" MouseLeftButtonUp="healthSphereCanvas_MouseLeftButtonUp"></Canvas>
+                    </Border>
+                    <Border Margin="2,0,0,0" x:Name="relationshipSphereBorder" BorderBrush="DarkSlateGray" Grid.Column="1" BorderThickness="1.5" CornerRadius="5,5,5,5">
+                        <Canvas Margin="0,3,0,3" x:Name="relationshipSphereCanvas" HorizontalAlignment="Stretch" MouseEnter="relationshipSphereCanvas_MouseEnter" MouseLeave="relationshipSphereCanvas_MouseLeave" MouseLeftButtonUp="relationshipSphereCanvas_MouseLeftButtonUp"></Canvas>
+                    </Border>
+                </Grid>
+
+                <Grid Margin="0,10,0,10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="200"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Border Margin="0,0,2,0" x:Name="environmentSphereBorder" BorderBrush="DarkSlateGray" Grid.Column="0" BorderThickness="1.5" CornerRadius="5,5,5,5">
+                        <Canvas Margin="0,3,0,3" Grid.Column="0" x:Name="environmentSphereCanvas" HorizontalAlignment="Stretch" MouseEnter="environmentSphereCanvas_MouseEnter" MouseLeave="environmentSphereCanvas_MouseLeave" MouseLeftButtonUp="environmentSphereCanvas_MouseLeftButtonUp" ></Canvas>
+                    </Border>
+                    <Border Margin="2,0,0,0" x:Name="vocationSphereBorder" BorderBrush="DarkSlateGray" Grid.Column="1" BorderThickness="1.5" CornerRadius="5,5,5,5">
+                        <Canvas Margin="0,3,0,3" Grid.Column="1" x:Name="vocationSphereCanvas" HorizontalAlignment="Stretch" MouseEnter="vocationSphereCanvas_MouseEnter" MouseLeave="vocationSphereCanvas_MouseLeave" MouseLeftButtonUp="vocationSphereCanvas_MouseLeftButtonUp" ></Canvas>
+                    </Border>
+                </Grid>
+
+                <Grid Margin="0,10,0,10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="200"></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <Border Margin="0,0,2,0" x:Name="independenceSphereBorder" BorderBrush="DarkSlateGray" Grid.Column="0" BorderThickness="1.5" CornerRadius="5,5,5,5">
+                        <Canvas Margin="0,3,0,3" Grid.Column="0" x:Name="independenceSphereCanvas" HorizontalAlignment="Stretch" MouseEnter="independenceSphereCanvas_MouseEnter" MouseLeave="independenceSphereCanvas_MouseLeave" MouseLeftButtonUp="independenceSphereCanvas_MouseLeftButtonUp"></Canvas>
+                    </Border>
+                    <Border Margin="2,0,0,0" x:Name="selfdevelopmentSphereBorder" BorderBrush="DarkSlateGray" Grid.Column="1" BorderThickness="1.5" CornerRadius="5,5,5,5">
+                        <Canvas Margin="0,3,0,3" Grid.Column="1" x:Name="selfdevelopmentSphereCanvas" HorizontalAlignment="Stretch" MouseEnter="selfdevelopmentSphereCanvas_MouseEnter" MouseLeave="selfdevelopmentSphereCanvas_MouseLeave" MouseLeftButtonUp="selfdevelopmentSphereCanvas_MouseLeftButtonUp"></Canvas>
+                    </Border>
+                </Grid>
+
+                <Grid Margin="0,10,0,10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="200"></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <Border Margin="0,0,2,0" x:Name="brightnesSphereBorder" BorderBrush="DarkSlateGray" Grid.Column="0" BorderThickness="1.5" CornerRadius="5,5,5,5">
+                        <Canvas Margin="0,3,0,3" Grid.Column="0" x:Name="brightnesSphereCanvas" HorizontalAlignment="Stretch" MouseEnter="brightnesSphereCanvas_MouseEnter" MouseLeave="brightnesSphereCanvas_MouseLeave" MouseLeftButtonUp="brightnesSphereCanvas_MouseLeftButtonUp"></Canvas>
+                    </Border>
+                    <Border x:Name="spiritualitySphereBorder" BorderBrush="DarkSlateGray" Grid.Column="1" BorderThickness="1.5" CornerRadius="5,5,5,5">
+                        <Canvas Margin="0,3,0,3" Grid.Column="1" x:Name="spiritualitySphereCanvas" HorizontalAlignment="Stretch" MouseEnter="spiritualitySphereCanvas_MouseEnter" MouseLeave="spiritualitySphereCanvas_MouseLeave" MouseLeftButtonUp="spiritualitySphereCanvas_MouseLeftButtonUp"></Canvas>
+                    </Border>
+                </Grid>
+            </StackPanel>
+        </ScrollViewer>
+
+        <StackPanel Grid.Column="2">
+            <Button Margin="5,10,5,10" Content="Reset Spheres" Click="Button_Click"></Button>
+            <StackPanel x:Name="sphereEditMenu">
+
+            </StackPanel>
+        </StackPanel>
+        
+        
+    </Grid>
+</Page>

@@ -1,0 +1,42 @@
+﻿<Page x:Class="IProject_Beta.DoneListPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:IProject_Beta"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="DoneListPage">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"></ColumnDefinition>
+            <ColumnDefinition Width="9*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Button Grid.Row="1" Grid.Column="0" Content="add Tag" Click="Button_Click"></Button>
+        <Button Margin="3,0,0,0" Grid.Row="1" Grid.Column="1" Content="add Achievement" Click="Button_Click_1"></Button>
+
+        <ScrollViewer Grid.Column="0" Grid.Row="0">
+            <ListView Margin ="0,0,2,0" x:Name="TagsList"></ListView>
+        </ScrollViewer>
+        <ScrollViewer Grid.Column="1" Grid.Row="0">
+            <StackPanel Margin="3,0,3,0">
+                <TextBox x:Name="TagNameBox" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Transparent" FontWeight="Bold" FontSize="24" LostFocus="TagNameBox_LostFocus"/>
+                <Grid x:Name="AchievemntsGrid">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="3*"></ColumnDefinition>
+                        <ColumnDefinition Width="7*"></ColumnDefinition>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                </Grid>
+            </StackPanel>
+        </ScrollViewer>
+        
+    </Grid>
+</Page>

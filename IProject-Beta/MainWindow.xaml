@@ -1,0 +1,37 @@
+﻿<Window x:Class="IProject_Beta.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:IProject_Beta"
+        mc:Ignorable="d"
+        Title="Iĝanta" Height="450" Width="800"
+        MinWidth="860"
+        MinHeight="680" MouseMove="Window_MouseMove">
+    <Grid x:Name="GeneralGrid">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="11*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid x:Name="MenuBar" Visibility="Visible">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+                <ColumnDefinition Width="8*"></ColumnDefinition>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Button Background="#ffcc33" Grid.Column="0" x:Name="LogOutButton" Content="Log out" Grid.Row="0" Click="LogOutButton_Click" Visibility="Hidden" Margin="5,0,0,0"></Button>
+            <Button Background="#ffcc33" Grid.Column="0" x:Name="BackButton" Content="Back" Grid.Row="0" Click="BackButton_Click" Visibility="Hidden" Margin="5,0,0,0"></Button>
+
+            <Label x:Name="pageNameLabel" Grid.Column="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="24" FontWeight="Bold" Content=""></Label>
+
+            <Button Background="#ffcc33" x:Name="SettingsButton" Content="Settings" Grid.Column="2" Click="SettingsButton_Click" Visibility="Hidden" Margin="0,0,5,0"></Button>
+        </Grid>
+        <Frame x:Name="PageFrame" NavigationUIVisibility="Hidden" Grid.Row="1">
+            
+        </Frame>
+    </Grid>
+</Window>

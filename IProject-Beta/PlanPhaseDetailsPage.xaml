@@ -1,0 +1,67 @@
+﻿<Page x:Class="IProject_Beta.PlanPhaseDetailsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:IProject_Beta"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="PlanPhaseDetailsPage" Loaded="Page_Loaded">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="8*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Label Grid.Column="2" Grid.ColumnSpan="3" Content="Task" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="20" FontWeight="Bold"></Label>
+        <Label Grid.Column="5" Grid.ColumnSpan="1" Content="Deadline" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="20" FontWeight="Bold"></Label>
+
+        <ScrollViewer Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="5">
+            <Grid x:Name="TasksGrid">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                    <ColumnDefinition Width="8*"></ColumnDefinition>
+                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+            </Grid>
+        </ScrollViewer>
+        
+        
+
+        <Button x:Name="closeButton" Content="Close" Grid.Column="1" Grid.Row="2" Click="closeButton_Click" Visibility="Hidden"></Button>
+        <TextBox x:Name="changeNameBox" VerticalContentAlignment="Center" VerticalAlignment="Center" Margin="2,0,2,0" Grid.Column="2" Grid.Row="2" Visibility="Hidden" LostFocus="changeNameBox_LostFocus"></TextBox>
+        <StackPanel x:Name="movePanel" Orientation="Horizontal" Grid.Column="3" Grid.Row="2" HorizontalAlignment="Center" Visibility="Hidden">
+            <Button x:Name="moveUpButton" Margin="0,0,2,0" Click="moveUpButton_Click">
+                <TextBlock TextWrapping="Wrap" FontSize="9" TextAlignment="Center">
+                    move
+                    <LineBreak/>
+                    up
+                </TextBlock>
+            </Button>
+            <Button x:Name="moveDownButton" Margin="2,0,0,0" Click="moveDownButton_Click">
+                <TextBlock TextWrapping="Wrap" FontSize="9" TextAlignment="Center">
+                    move
+                    <LineBreak/>
+                    down
+                </TextBlock>
+            </Button>
+        </StackPanel>
+        <DatePicker x:Name="DeadlinePicker" Grid.Column="4" Grid.Row="2" Visibility="Hidden" SelectedDateChanged="DeadlinePicker_SelectedDateChanged" Margin="0,0,4,0"></DatePicker>
+        <Button x:Name="RemoveButton" Content="Remove" Grid.Column="5" Grid.Row="2" Visibility="Hidden" Click="RemoveButton_Click" Background="IndianRed" BorderBrush="IndianRed"></Button>
+
+        <TextBox x:Name="newTaskNameBox" Grid.Column="1" Grid.ColumnSpan="4" Grid.Row="2" VerticalAlignment="Center" VerticalContentAlignment="Center" Margin="0,0,5,0" Text="New Task"></TextBox>
+        <Button x:Name="addTaskButton" Content="add Task" Grid.Row="2" Grid.Column="5" Click="addTaskButton_Click"></Button>
+    </Grid>
+</Page>

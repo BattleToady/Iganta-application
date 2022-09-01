@@ -1,0 +1,47 @@
+﻿<Page x:Class="IProject_Beta.PlanGeneralPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:IProject_Beta"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="PlanGeneralPage" Loaded="Page_Loaded">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="10*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+
+        <ScrollViewer Grid.Row="0" Grid.Column="1">
+            <StackPanel x:Name="PhasesPanel" Margin="5,0,5,0">
+            </StackPanel>
+        </ScrollViewer>
+        <Grid Grid.Column="1" Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*"></ColumnDefinition>
+                <ColumnDefinition Width="3*"></ColumnDefinition>
+                <ColumnDefinition Width="3*"></ColumnDefinition>
+                <ColumnDefinition Width="3*"></ColumnDefinition>
+                <ColumnDefinition Width="3*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            
+            <TextBox Grid.ColumnSpan="4" Text="New phase" VerticalContentAlignment="Center" x:Name="NewPhaseBox"></TextBox>
+            <Button x:Name="AddPhaseButton" Content="add Phase" Grid.Column="4" Click="Button_Click" VerticalAlignment="Center" VerticalContentAlignment="Center" Margin="0,0,5,0"></Button>
+
+            <Button x:Name="closeButton" Content="Close" Visibility="Hidden" Click="closeButton_Click"></Button>
+            <Button x:Name="removeButton" Margin="3,0,3,0" Content="Remove" Grid.Column="1" Visibility="Hidden" Click="Button_Click_1" Background="IndianRed" BorderBrush="IndianRed"></Button>
+            <TextBox x:Name="PhaseNameBox" Margin="10,0,0,0" Grid.Column="2" Text="Phase" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" VerticalAlignment="Center" Visibility="Hidden" LostFocus="PhaseNameBox_LostFocus"></TextBox>
+            <ComboBox x:Name="progressValueBox" Margin="10,0,0,0" Grid.Column="3" VerticalAlignment="Center" Visibility="Hidden" LostFocus="progressValueBox_LostFocus"></ComboBox>
+            <Button x:Name="DetailsButton" Margin="3,0,0,0" Grid.Column="4" Content="Details" Click="DetailsButton_Click" Visibility="Hidden"></Button>
+        </Grid>
+    </Grid>
+</Page>

@@ -1,0 +1,58 @@
+﻿<Page x:Class="IProject_Beta.MainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:IProject_Beta"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="MainPage">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="10*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="11*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <ScrollViewer Grid.Row="0" Grid.Column="1" VerticalAlignment="Top">
+            <StackPanel Margin="10,0,10,0">
+                <Grid>
+                    <Border SizeChanged="branchesBorder_SizeChanged" Loaded="branchesBorder_Loaded" BorderThickness="0,1.5,0,1.5" BorderBrush="DarkSlateGray">
+                        <ScrollViewer Margin="0,5,0,5">
+                            <Grid x:Name="branchesGrid" Margin="0,0,1,0">
+                            </Grid>
+                        </ScrollViewer>
+                    </Border>
+                </Grid>
+                <Button Content="add Project" Click="Button_Click" Margin="0,5,0,5" Foreground="Black"></Button>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Border x:Name="sphereCanvasBorder" Margin="5,5,5,5" Height="{Binding ActualWidth, RelativeSource={RelativeSource Self}}" Grid.Column="0" BorderBrush="Transparent" BorderThickness="2" CornerRadius="5,5,5,5">
+                        <Canvas Margin="10,5,5,5" x:Name="spheresCanvas" MouseEnter="spheresCanvas_MouseEnter" MouseLeave="spheresCanvas_MouseLeave" SizeChanged="spheresCanvas_SizeChanged" MouseLeftButtonUp="spheresCanvas_MouseLeftButtonUp">
+                        </Canvas>
+                    </Border>
+                    <Border Grid.Column="1" x:Name="planCanvasBorder" Margin="5,5,5,5" Height="{Binding ActualWidth, RelativeSource={RelativeSource Self}}" BorderBrush="Transparent" BorderThickness="2" CornerRadius="5,5,5,5">
+                            <Grid>
+                            <Canvas x:Name="planCanvas" VerticalAlignment="Stretch" MouseEnter="planCanvas_MouseEnter" MouseLeave="planCanvas_MouseLeave" SizeChanged="planCanvas_SizeChanged" MouseLeftButtonUp="planDetailsButton_Click"></Canvas>
+                         </Grid>
+                    </Border>
+
+                </Grid>
+                <Button Foreground="Black" Content="Diary" Click="Button_Click_3" Margin="0,5,0,0"></Button>
+                <Button Foreground="Black" Content="Ideas Bucket" Click="Button_Click_1" Margin="0,5,0,0"></Button>
+                <Button Foreground="Black" x:Name="doneDetailsButton" Content="Done list" Margin="0,5,0,0" Click="doneDetailsButton_Click"/>
+                <Button Foreground="Black" x:Name="projectArchive" Content="Project Archive" Margin="0,5,0,5" Click="projectArchive_Click"></Button>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Page>
